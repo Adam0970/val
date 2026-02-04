@@ -2,7 +2,9 @@
 <html lang="sk">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pre Katku 💖</title>
+
 <style>
 body {
   margin: 0;
@@ -14,25 +16,32 @@ body {
   font-family: Arial, sans-serif;
 }
 
-/* karta */
+/* kontajner */
 .card-container {
-  perspective: 1000px;
+  perspective: 1200px;
 }
 
+/* karta – prispôsobí sa obrazovke */
 .card {
-  width: 300px;
-  height: 200px;
+  width: 80vw;
+  max-width: 320px;
+  height: 50vh;
+  max-height: 220px;
+  min-width: 220px;
+  min-height: 150px;
+
   position: relative;
   transform-style: preserve-3d;
-  transition: transform 0.8s;
+  transition: transform 0.8s ease;
   cursor: pointer;
 }
 
+/* otočenie */
 .card.flipped {
   transform: rotateY(180deg);
 }
 
-/* strany karty */
+/* strany */
 .card-face {
   position: absolute;
   width: 100%;
@@ -41,11 +50,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 28px;
   text-align: center;
   padding: 20px;
   backface-visibility: hidden;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  font-size: clamp(18px, 4vw, 26px);
 }
 
 /* predná strana */
@@ -60,6 +69,17 @@ body {
   color: #ff4d6d;
   transform: rotateY(180deg);
 }
+
+/* jemné pulzovanie */
+.card {
+  animation: pulse 2.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
 </style>
 </head>
 
@@ -71,8 +91,8 @@ body {
       💌 Pre Katku
     </div>
     <div class="card-face back">
-      Mám ťa veľmi rád 💖<br>
-      Prajem prekrásny Valentín 🌸
+      Mám ťa rád 💖<br><br>
+      Prajem krásny Valentín 🌸
     </div>
   </div>
 </div>
