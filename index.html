@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8">
+  <title>Pre Katku 🌸</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(to top, #ffe4ec, #ffffff);
+      overflow: hidden;
+      font-family: "Comic Sans MS", Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    h1 {
+      color: #ff4f87;
+      font-size: 3em;
+      animation: fadeIn 2s ease-in-out;
+      z-index: 5;
+    }
+
+    p {
+      font-size: 1.4em;
+      color: #444;
+      animation: fadeIn 3s ease-in-out;
+      z-index: 5;
+    }
+
+    .flower {
+      position: absolute;
+      width: 60px;
+      animation: float 10s linear infinite;
+      opacity: 0.9;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(110vh) rotate(0deg);
+        opacity: 0;
+      }
+      20% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-20vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+
+    .card {
+      background: rgba(255,255,255,0.8);
+      padding: 30px 50px;
+      border-radius: 25px;
+      box-shadow: 0 0 20px rgba(255,0,100,0.2);
+      text-align: center;
+      z-index: 10;
+    }
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <h1>Ahoj Katka 🌸</h1>
+  <p>Chcel som ti poslať niečo pekné.<br>
+  Len tak… aby si vedela, že ťa mám rád 💛<br>
+  Prajem ti krásny valentín 😊</p>
+</div>
+
+<!-- KVETY -->
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Rosa_rubiginosa_Rose.jpg/240px-Rosa_rubiginosa_Rose.jpg" class="flower" style="left:10%; animation-duration:12s;">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Tulip_-_floriade_canberra.jpg/240px-Tulip_-_floriade_canberra.jpg" class="flower" style="left:25%; animation-duration:14s;">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Lilium_bulbiferum_04.jpg/240px-Lilium_bulbiferum_04.jpg" class="flower" style="left:40%; animation-duration:11s;">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Red_Dahlia.jpg/240px-Red_Dahlia.jpg" class="flower" style="left:55%; animation-duration:13s;">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Cherry_blossoms_in_Spring.jpg/240px-Cherry_blossoms_in_Spring.jpg" class="flower" style="left:70%; animation-duration:15s;">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Field_of_sunflowers.jpg/240px-Field_of_sunflowers.jpg" class="flower" style="left:85%; animation-duration:12s;">
+
+<script>
+  const flowers = document.querySelectorAll(".flower");
+
+  flowers.forEach(flower => {
+    flower.style.top = Math.random() * 100 + "vh";
+  });
+</script>
+
+</body>
+</html>
