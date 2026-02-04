@@ -1,95 +1,130 @@
 <!DOCTYPE html>
 <html lang="sk">
 <head>
-  <meta charset="UTF-8">
-  <title>Pre Katku 🌸</title>
-  <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      background: linear-gradient(to top, #ffe4ec, #ffffff);
-      overflow: hidden;
-      font-family: "Comic Sans MS", Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-    }
+<meta charset="UTF-8">
+<title>Pre Katku 🌸</title>
 
-    h1 {
-      color: #ff4f87;
-      font-size: 3em;
-      animation: fadeIn 2s ease-in-out;
-      z-index: 5;
-    }
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(to top, #ffe6ef, #ffffff);
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-    p {
-      font-size: 1.4em;
-      color: #444;
-      animation: fadeIn 3s ease-in-out;
-      z-index: 5;
-    }
+.card {
+  background: rgba(255,255,255,0.85);
+  padding: 30px 50px;
+  border-radius: 25px;
+  text-align: center;
+  z-index: 5;
+  box-shadow: 0 0 20px rgba(255,100,150,0.3);
+}
 
-    .flower {
-      position: absolute;
-      width: 60px;
-      animation: float 10s linear infinite;
-      opacity: 0.9;
-    }
+h1 {
+  color: #ff4f87;
+  font-size: 3em;
+}
 
-    @keyframes float {
-      0% {
-        transform: translateY(110vh) rotate(0deg);
-        opacity: 0;
-      }
-      20% {
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(-20vh) rotate(360deg);
-        opacity: 0;
-      }
-    }
+p {
+  font-size: 1.4em;
+  color: #444;
+}
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px);}
-      to { opacity: 1; transform: translateY(0);}
-    }
+/* 🌸 Kvet */
+.flower {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  animation: float 12s linear infinite;
+}
 
-    .card {
-      background: rgba(255,255,255,0.8);
-      padding: 30px 50px;
-      border-radius: 25px;
-      box-shadow: 0 0 20px rgba(255,0,100,0.2);
-      text-align: center;
-      z-index: 10;
-    }
-  </style>
+.petal {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: pink;
+  border-radius: 50%;
+}
+
+.center {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: yellow;
+  border-radius: 50%;
+  top: 14px;
+  left: 14px;
+}
+
+/* okvetné lístky */
+.p1 { top:0; left:10px; }
+.p2 { top:10px; left:0; }
+.p3 { top:10px; right:0; }
+.p4 { bottom:0; left:10px; }
+.p5 { top:5px; left:5px; }
+.p6 { top:5px; right:5px; }
+
+/* animácia plávania */
+@keyframes float {
+  0% {
+    transform: translateY(110vh) rotate(0deg);
+    opacity: 0;
+  }
+  20% {opacity: 1;}
+  100% {
+    transform: translateY(-20vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+</style>
 </head>
+
 <body>
 
 <div class="card">
   <h1>Ahoj Katka 🌸</h1>
-  <p>Chcel som ti poslať niečo pekné.<br>
-  Len tak… aby si vedela, že ťa mám rád 💛<br>
-  Prajem ti krásny valentín 😊</p>
+  <p>
+    Chcel som ti poslať niečo pekné.<br>
+    Len aby si vedela, že ťa mám rád 💛<br>
+    Prajem ti krásny deň 😊
+  </p>
 </div>
 
 <!-- KVETY -->
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Rosa_rubiginosa_Rose.jpg/240px-Rosa_rubiginosa_Rose.jpg" class="flower" style="left:10%; animation-duration:12s;">
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Tulip_-_floriade_canberra.jpg/240px-Tulip_-_floriade_canberra.jpg" class="flower" style="left:25%; animation-duration:14s;">
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Lilium_bulbiferum_04.jpg/240px-Lilium_bulbiferum_04.jpg" class="flower" style="left:40%; animation-duration:11s;">
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Red_Dahlia.jpg/240px-Red_Dahlia.jpg" class="flower" style="left:55%; animation-duration:13s;">
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Cherry_blossoms_in_Spring.jpg/240px-Cherry_blossoms_in_Spring.jpg" class="flower" style="left:70%; animation-duration:15s;">
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Field_of_sunflowers.jpg/240px-Field_of_sunflowers.jpg" class="flower" style="left:85%; animation-duration:12s;">
+<div class="flower" style="left:10%; animation-duration:12s;">
+  <div class="petal p1"></div><div class="petal p2"></div><div class="petal p3"></div>
+  <div class="petal p4"></div><div class="petal p5"></div><div class="petal p6"></div>
+  <div class="center"></div>
+</div>
 
-<script>
-  const flowers = document.querySelectorAll(".flower");
+<div class="flower" style="left:30%; animation-duration:15s;">
+  <div class="petal p1"></div><div class="petal p2"></div><div class="petal p3"></div>
+  <div class="petal p4"></div><div class="petal p5"></div><div class="petal p6"></div>
+  <div class="center"></div>
+</div>
 
-  flowers.forEach(flower => {
-    flower.style.top = Math.random() * 100 + "vh";
-  });
-</script>
+<div class="flower" style="left:50%; animation-duration:13s;">
+  <div class="petal p1"></div><div class="petal p2"></div><div class="petal p3"></div>
+  <div class="petal p4"></div><div class="petal p5"></div><div class="petal p6"></div>
+  <div class="center"></div>
+</div>
+
+<div class="flower" style="left:70%; animation-duration:17s;">
+  <div class="petal p1"></div><div class="petal p2"></div><div class="petal p3"></div>
+  <div class="petal p4"></div><div class="petal p5"></div><div class="petal p6"></div>
+  <div class="center"></div>
+</div>
+
+<div class="flower" style="left:85%; animation-duration:14s;">
+  <div class="petal p1"></div><div class="petal p2"></div><div class="petal p3"></div>
+  <div class="petal p4"></div><div class="petal p5"></div><div class="petal p6"></div>
+  <div class="center"></div>
+</div>
 
 </body>
 </html>
