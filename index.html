@@ -3,81 +3,61 @@
 <head>
 <meta charset="UTF-8">
 <title>Pre Katku 🌸</title>
-
 <style>
 body {
   margin: 0;
   height: 100vh;
-  background: linear-gradient(to top, #ffe6ef, #ffffff);
+  background: linear-gradient(#ffd6e8, #fff);
   overflow: hidden;
   font-family: Arial, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.card {
-  background: rgba(255,255,255,0.85);
-  padding: 30px 50px;
-  border-radius: 25px;
   text-align: center;
-  z-index: 5;
-  box-shadow: 0 0 20px rgba(255,100,150,0.3);
 }
 
 h1 {
-  color: #ff4f87;
-  font-size: 3em;
+  margin-top: 40px;
+  color: #d63384;
+  z-index: 10;
+  position: relative;
 }
 
-p {
-  font-size: 1.4em;
-  color: #444;
-}
-
-/* 🌸 Kvet */
+/* KVET */
 .flower {
   position: absolute;
-  width: 40px;
-  height: 40px;
-  animation: float 12s linear infinite;
+  bottom: -100px;
+  animation: float 10s linear infinite;
 }
 
 .petal {
-  position: absolute;
   width: 20px;
   height: 20px;
   background: pink;
   border-radius: 50%;
+  position: absolute;
 }
 
 .center {
-  position: absolute;
-  width: 12px;
-  height: 12px;
+  width: 15px;
+  height: 15px;
   background: yellow;
   border-radius: 50%;
-  top: 14px;
-  left: 14px;
+  position: absolute;
+  top: 12px;
+  left: 12px;
 }
 
-/* okvetné lístky */
-.p1 { top:0; left:10px; }
-.p2 { top:10px; left:0; }
-.p3 { top:10px; right:0; }
-.p4 { bottom:0; left:10px; }
-.p5 { top:5px; left:5px; }
-.p6 { top:5px; right:5px; }
+/* lupene */
+.p1 { top:0; left:12px; }
+.p2 { top:12px; left:24px; }
+.p3 { top:24px; left:12px; }
+.p4 { top:12px; left:0; }
 
-/* animácia plávania */
 @keyframes float {
-  0% {
-    transform: translateY(110vh) rotate(0deg);
-    opacity: 0;
+  from {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
   }
-  20% {opacity: 1;}
-  100% {
-    transform: translateY(-20vh) rotate(360deg);
+  to {
+    transform: translateY(-120vh) rotate(360deg);
     opacity: 0;
   }
 }
@@ -85,44 +65,45 @@ p {
 </head>
 
 <body>
+<h1>Ahoj Katka 🌸 Mám ťa rád</h1>
 
-<div class="card">
-  <h1>Ahoj Katka 🌸</h1>
-  <p>
-    Chcel som ti poslať niečo pekné.<br>
-    Len aby si vedela, že ťa mám rád 💛<br>
-    Prajem ti krásny deň 😊
-  </p>
-</div>
-
-<!-- KVETY -->
 <div class="flower" style="left:10%; animation-duration:12s;">
-  <div class="petal p1"></div><div class="petal p2"></div><div class="petal p3"></div>
-  <div class="petal p4"></div><div class="petal p5"></div><div class="petal p6"></div>
+  <div class="petal p1"></div>
+  <div class="petal p2"></div>
+  <div class="petal p3"></div>
+  <div class="petal p4"></div>
   <div class="center"></div>
 </div>
 
-<div class="flower" style="left:30%; animation-duration:15s;">
-  <div class="petal p1"></div><div class="petal p2"></div><div class="petal p3"></div>
-  <div class="petal p4"></div><div class="petal p5"></div><div class="petal p6"></div>
+<div class="flower" style="left:30%; animation-duration:9s;">
+  <div class="petal p1"></div>
+  <div class="petal p2"></div>
+  <div class="petal p3"></div>
+  <div class="petal p4"></div>
   <div class="center"></div>
 </div>
 
-<div class="flower" style="left:50%; animation-duration:13s;">
-  <div class="petal p1"></div><div class="petal p2"></div><div class="petal p3"></div>
-  <div class="petal p4"></div><div class="petal p5"></div><div class="petal p6"></div>
+<div class="flower" style="left:50%; animation-duration:11s;">
+  <div class="petal p1"></div>
+  <div class="petal p2"></div>
+  <div class="petal p3"></div>
+  <div class="petal p4"></div>
   <div class="center"></div>
 </div>
 
-<div class="flower" style="left:70%; animation-duration:17s;">
-  <div class="petal p1"></div><div class="petal p2"></div><div class="petal p3"></div>
-  <div class="petal p4"></div><div class="petal p5"></div><div class="petal p6"></div>
+<div class="flower" style="left:70%; animation-duration:8s;">
+  <div class="petal p1"></div>
+  <div class="petal p2"></div>
+  <div class="petal p3"></div>
+  <div class="petal p4"></div>
   <div class="center"></div>
 </div>
 
-<div class="flower" style="left:85%; animation-duration:14s;">
-  <div class="petal p1"></div><div class="petal p2"></div><div class="petal p3"></div>
-  <div class="petal p4"></div><div class="petal p5"></div><div class="petal p6"></div>
+<div class="flower" style="left:90%; animation-duration:13s;">
+  <div class="petal p1"></div>
+  <div class="petal p2"></div>
+  <div class="petal p3"></div>
+  <div class="petal p4"></div>
   <div class="center"></div>
 </div>
 
