@@ -1,104 +1,89 @@
 <!DOCTYPE html>
 <html lang="sk">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pre Katku 💖</title>
+  <meta charset="UTF-8">
+  <title>Pre Katku🌸</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ffd6e8, #ffeef5);
+      font-family: Arial, sans-serif;
+    }
 
-<style>
-body {
-  margin: 0;
-  height: 100vh;
-  background: linear-gradient(135deg, #ffb6c1, #ffe4ec);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: Arial, sans-serif;
-}
+    .card-container {
+      perspective: 1000px;
+    }
 
-/* kontajner */
-.card-container {
-  perspective: 1200px;
-}
+    .card {
+      width: 300px;
+      height: 200px;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 1s;
+      cursor: pointer;
+    }
 
-/* karta – veľká na mobil */
-.card {
-  width: 90vw;
-  height: 60vh;
-  max-width: 400px;
-  max-height: 350px;
+    .card.open {
+      transform: rotateY(180deg);
+    }
 
-  position: relative;
-  transform-style: preserve-3d;
-  transition: transform 0.8s ease;
-  cursor: pointer;
-}
+    .card-face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      padding: 20px;
+    }
 
-/* otočenie */
-.card.flipped {
-  transform: rotateY(180deg);
-}
+    .front {
+      background: #ff7aa2;
+      color: white;
+      font-size: 22px;
+      font-weight: bold;
+    }
 
-/* strany */
-.card-face {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 25px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 25px;
-  backface-visibility: hidden;
-  box-shadow: 0 12px 25px rgba(0,0,0,0.25);
-  font-size: clamp(24px, 6vw, 32px);
-}
+    .back {
+      background: #fff;
+      transform: rotateY(180deg);
+      color: #333;
+      font-size: 18px;
+    }
 
-/* predná strana */
-.front {
-  background: #ff4d6d;
-  color: white;
-}
-
-/* zadná strana */
-.back {
-  background: white;
-  color: #ff4d6d;
-  transform: rotateY(180deg);
-}
-
-/* jemná animácia aby lákala kliknúť */
-.card {
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
-}
-</style>
+    .flower {
+      font-size: 40px;
+      margin-top: 10px;
+    }
+  </style>
 </head>
-
 <body>
 
 <div class="card-container">
-  <div class="card" onclick="flipCard()">
+  <div class="card" onclick="openCard()">
     <div class="card-face front">
-      💌 Pre Katku
+      💌 Pre Katku <br><br> Klikni na mňa
     </div>
     <div class="card-face back">
-      Mám ťa rád 💖<br><br>
-      Prajem krásny Valentín 🌸
+      Prajem ti krásny Valentín ❤️<br>
+      Mám ťa rád 🌸
+      <div class="flower">🌷</div>
     </div>
   </div>
 </div>
 
 <script>
-function flipCard() {
-  document.querySelector(".card").classList.toggle("flipped");
-}
+  function openCard() {
+    document.querySelector('.card').classList.toggle('open');
+  }
 </script>
 
 </body>
