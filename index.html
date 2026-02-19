@@ -2,89 +2,87 @@
 <html lang="sk">
 <head>
   <meta charset="UTF-8">
-  <title>Pre moju Ellu🌸</title>
+  <title>Chyť smajlíka 😜</title>
   <style>
     body {
-      margin: 0;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: linear-gradient(135deg, #ffd6e8, #ffeef5);
       font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      text-align: center;
+      overflow: hidden;
     }
 
-    .card-container {
-      perspective: 1000px;
+    h1 {
+      margin-top: 20px;
     }
 
-    .card {
-      width: 300px;
-      height: 200px;
-      position: relative;
-      transform-style: preserve-3d;
-      transition: transform 1s;
+    #score {
+      font-size: 24px;
+      margin: 10px;
+    }
+
+    #emoji {
+      font-size: 50px;
+      position: absolute;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      border-radius: 10px;
+      border: none;
+      background: #ff5e78;
+      color: white;
       cursor: pointer;
     }
 
-    .card.open {
-      transform: rotateY(180deg);
-    }
-
-    .card-face {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      backface-visibility: hidden;
-      border-radius: 15px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-      padding: 20px;
-    }
-
-    .front {
-      background: #ff7aa2;
-      color: white;
-      font-size: 22px;
-      font-weight: bold;
-    }
-
-    .back {
-      background: #fff;
-      transform: rotateY(180deg);
-      color: #333;
-      font-size: 18px;
-    }
-
-    .flower {
-      font-size: 40px;
-      margin-top: 10px;
+    button:hover {
+      background: #ff2e50;
     }
   </style>
 </head>
 <body>
 
-<div class="card-container">
-  <div class="card" onclick="openCard()">
-    <div class="card-face front">
-      💌 Pre moju Ellu <br><br> Klikni na mňa
-    </div>
-    <div class="card-face back">
-      Prajem ti krásny Valentín láska ❤️<br>
-      Ľúbim ťa🌸
-      <div class="flower">🌷</div>
-    </div>
-  </div>
-</div>
+  <h1>🎯 Chyť smajlíka 😜</h1>
+  <p>Klikaj na smajlíka čo najrýchlejšie!</p>
+  <div id="score">Skóre: 0</div>
+  <button onclick="startGame()">Začať hru</button>
 
-<script>
-  function openCard() {
-    document.querySelector('.card').classList.toggle('open');
-  }
-</script>
+  <div id="emoji">😜</div>
+
+  <script>
+    let score = 0;
+    let emoji = document.getElementById("emoji");
+
+    function randomPosition() {
+      const x = Math.random() * (window.innerWidth - 60);
+      const y = Math.random() * (window.innerHeight - 60);
+      emoji.style.left = x + "px";
+      emoji.style.top = y + "px";
+    }
+
+    emoji.onclick = function() {
+      score++;
+      document.getElementById("score").innerText = "Skóre: " + score;
+      randomPosition();
+      emoji.innerText = getRandomEmoji();
+    };
+
+    function getRandomEmoji() {
+      const emojis = ["😜","😂","🤪","😎","🥸","🐸","👻","💩","🦄"];
+      return emojis[Math.floor(Math.random() * emojis.length)];
+    }
+
+    function startGame() {
+      score = 0;
+      document.getElementById("score").innerText = "Skóre: 0";
+      randomPosition();
+      emoji.style.display = "block";
+    }
+
+    randomPosition();
+  </script>
 
 </body>
 </html>
